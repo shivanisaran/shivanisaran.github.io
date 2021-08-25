@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/path/to/tailwind.css" rel="stylesheet">
+   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> 
+<!-- script start -->
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script>
+    var cont=0;
+function loopSlider(){
+  var xx= setInterval(function(){
+        switch(cont)
+        {
+        case 0:{
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-green-800");
+            $("#sButton2").addClass("bg-green-800");
+        cont=1;
+        
+        break;
+        }
+        case 1:
+        {
+        
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-green-800");
+            $("#sButton1").addClass("bg-green-800");
+           
+        cont=0;
+        
+        break;
+        }
+        
+        
+        }},8000);
+
+}
+
+function reinitLoop(time){
+clearInterval(xx);
+setTimeout(loopSlider(),time);
+}
+
+
+
+function sliderButton1(){
+
+    $("#slider-2").fadeOut(400);
+    $("#slider-1").delay(400).fadeIn(400);
+    $("#sButton2").removeClass("bg-gree-800");
+    $("#sButton1").addClass("bg-green-800");
+    reinitLoop(4000);
+    cont=0
+    
+    }
+    
+    function sliderButton2(){
+    $("#slider-1").fadeOut(400);
+    $("#slider-2").delay(400).fadeIn(400);
+    $("#sButton1").removeClass("bg-green-800");
+    $("#sButton2").addClass("bg-green-800");
+    reinitLoop(4000);
+    cont=1
+    
+    }
+
+    $(window).ready(function(){
+        $("#slider-2").hide();
+        $("#sButton1").addClass("bg-green-800");
+        
+
+        loopSlider();
+     
+        
+    
+    
+    
+    
+    });
+
+  
+  </script>
+
+<!-- script end -->
+  </head>
+
+
+<body>
+    <!-- <h1>heyy shivaa !</h1> -->
+    <!-- nav start -->
+    <nav class="bg-green-900">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+         
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            
+        <div class="text-yellow-500 text-4xl font-serif">Apna Bazar</div>
+    </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Buy</a>
+  
+              <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2 ">Sale</a>
+  
+              <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Wheather </a>
+  
+              <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Problem</a>
+              <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Solution</a>
+            </div>
+          </div>
+        </div>
+             </div>
+    </div>
+  
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2" aria-current="page">Buy</a>
+  
+        <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Sale</a>
+  
+        <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Weather</a>
+  
+        <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Problem</a>
+        <a href="#" class="text-yellow-300 font-serif hover:bg-green-700 hover:text-white px-3 py-2">Solution</a>
+      </div>
+    </div>
+  </nav>
+ <!-- nav end -->
+
+
+    <!-- sliders html start -->
+    <div class="sliderAx h-auto">
+      <div id="slider-1" class="container mx-auto">
+        <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url(/tw/msd/src/image/feild.jpg)">
+       <div class="md:w-1/2">
+        
+        <p class="text-3xl font-bold font-serif">Farm Is Feild</p>
+        <p class="text-2xl mb-10 leading-none font-serif">Take What You Want</p>
+        <a href="#" class="hover:bg-green-700  py-2 px-3 font-serif  hover:text-white bg-green-700 text-yellow-300">Buy</a>
+        </div>  
+    </div> <!-- container -->
+      <br>
+      </div>
+
+      <div id="slider-2" class="container mx-auto">
+        <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url(/tw/msd/src/image/farm2.jpg)">
+       
+  <p class="font-bold text-sm uppercase">Services</p>
+        <p class="text-3xl font-bold">Feild Is Future</p>
+        <p class="text-2xl mb-10 leading-none">Take What You Want</p>
+        <a href="#" class="hover:bg-green-700  py-2 px-3 font-serif  hover:text-white bg-green-700 text-yellow-300">Contact us</a>
+         
+    </div> <!-- container -->
+      <br>
+      </div>
+    </div>
+ <div  class="flex justify-between w-12 mx-auto pb-2">
+        <button id="sButton1" onclick="sliderButton1()" class="bg-green-400 rounded-full w-4 pb-2 " ></button>
+    <button id="sButton2" onclick="sliderButton2() " class="bg-geen-400 rounded-full w-4 p-2"></button>
+  </div>
+  <!-- sliders html end -->
+
+
+
+  <!-- text -->
+  <div class="content-center flex justify-center mt-1 font-serif text-4xl ">
+   <div class="text-geen text-green-700 font-bold"> Agriculture </div>
+   <div class="text-geen text-yellow-500 font-bold">Machinery</div>
+  </div>
+  <!-- text end -->
+
+
+<!-- cards start -->
+    <div class="lg:flex items-center container mx-auto my-auto">
+
+      <!-- Card 1 -->
+      <div class="lg:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+        <!-- Card Image -->
+        <img src="/tw/msd/src/image/tractor1.png" alt=""class="overflow-hidden">
+        <!-- Card Content -->
+        <div class="p-4">
+          <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Mahindra Tractor</h3>
+          <p class="text-justify">price : $60</p>
+          <div class="mt-5">
+            <a href="" class="hover:bg-green-700  py-2 px-3 font-serif  hover:text-white bg-green-700 text-yellow-300">Buy</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="lg:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+        <!-- Card Image -->
+        <img src="/tw/msd/src/image/tractor1.png" alt=""class="overflow-hidden">
+        <!-- Card Content -->
+        <div class="p-4">
+          <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Mahindra Tractor</h3>
+          <p class="text-justify">price :$60</p>
+          <div class="mt-5">
+            <a href="" class="hover:bg-green-700  py-2 px-3 font-serif  hover:text-white bg-green-700 text-yellow-300">Buy</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="lg:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+        <!-- Card Image -->
+        <img src="/tw/msd/src/image/tractor1.png" alt=""class="overflow-hidden">
+        <!-- Card Content -->
+        <div class="p-4">
+          <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Mahindra Tractor</h3>
+          <p class="text-justify">price: $60</p>
+          <div class="mt-5">
+            <a href="" class="hover:bg-green-700  py-2 px-3 font-serif  hover:text-white bg-green-700 text-yellow-300">Buy</a>
+          </div>
+        </div>
+        <!-- cards end -->
+       
+</div>
+</div>
+<!-- footer -->
+<footer class="footer-1 bg-green-900 py-8 sm:py-12">
+  <div class="container mx-auto px-4">
+    <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+        <h5 class="text-xl text-yellow-500 font-serif font-semibold mb-6">About Us</h5>
+        
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
+        <h5 class="text-xl text-yellow-500 font-serif font-semibold mb-6">Contact Us</h5>
+       
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+        <h5 class="text-xl font-serif font-semibold text-yellow-500 mb-6">Buy</h5>
+        
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+        <h5 class="text-xl font-serif text-yellow-500 font-semibold mb-6">Sell</h5>
+        
+     
+    </div>
+
+    
+  </div>
+</footer>
+  
+  </body>
+</html>
